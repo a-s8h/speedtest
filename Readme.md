@@ -23,5 +23,6 @@ func main() {
 
 ## Dependencies
 
+* showwin/speedtest-go, uses for speedtest.net
 * gesquive/fast-cli, used to get api url for fast.com provider
 * chromedp/chromedp, used to scrape https://fast.com, google chrome required

@@ -1,6 +1,9 @@
 package speedtest
 
-import nf "github.com/a-s8h/speedtest/internal/netflix"
+import (
+	nf "github.com/a-s8h/speedtest/internal/netflix"
+	speedtest "github.com/a-s8h/speedtest/internal/ookla"
+)
 
 // TestProvider type, should be used to choose speed test provider
 type TestProvider int
@@ -24,6 +27,11 @@ type TestResult struct {
 func Test(provider TestProvider) (TestResult, error) {
 	switch provider {
 	case ookla:
+		d, u, err := speedtest.Measure()
+		if err != nil {
+			return TestResult{}, err
+		}
+		return TestResult{Download: d, Upload: u}, nil
 	case netflix:
 		d, u, err := nf.Measure()
 		if err != nil {

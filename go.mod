@@ -5,6 +5,7 @@ go 1.17
 require (
 	github.com/chromedp/chromedp v0.7.6
 	github.com/gesquive/fast-cli v0.2.10
+	github.com/showwin/speedtest-go v1.1.4
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 )
 
