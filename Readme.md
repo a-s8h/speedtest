@@ -14,9 +14,14 @@ go get -u github.com/a-s8h/speedtest
 import "github.com/a-s8h/speedtest/pkg/speedtest"
 
 func main() {
-	// You can choose between OOKLA and NETFLIX test providers. 
+	// You can choose between ookla and netflix, netflixHeadlessChrome test providers. 
 	// Result contains the Mbps for both download and upload
-	tr, err := speedtest.Test(speedtest.OOKLA)
-	fmt.Printf("speedtest.net download: %d Mbps, upload: %d Mbps", r.Download, r.Upload)
+	tr, err := speedtest.Test(speedtest.ookla)
+	fmt.Printf("speedtest.net download: %f Mbps, upload: %f Mbps", r.Download, r.Upload)
 }
 ```
+
+## Dependencies
+
+* gesquive/fast-cli, used to get api url for fast.com provider
+* chromedp/chromedp, used to scrape https://fast.com, google chrome required
